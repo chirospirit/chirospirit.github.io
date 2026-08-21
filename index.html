@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chiro Spirit Heverlee</title>
+<meta name="description" content="Chiro Spirit Heverlee - elke zondag van 14u tot 17u30, Huttelaan 30, 3001 Heverlee.">
+
+<!--
+=====================================================================
+  HANDLEIDING VOOR DE LEIDING  -  lees dit eerst
+=====================================================================
+
+  De hele website zit in DIT ENE BESTAND.
+
+  WAT WAAR STAAT (zoek op de hoofdletters)
+    KLEUREN        - de kleuren van de site aanpassen
+    MENU           - de knoppen bovenaan
+    KOP            - de titel bovenaan de pagina
+    OVER ONS       - tekst over de Chiro
+    INSCHRIJVEN    - inschrijvingsinfo
+    KALENDER       - datums toevoegen of schrappen
+    GROEPEN        - de vijf leeftijdsgroepen + leiding per groep
+    VERHUUR        - info over de lokalen
+    DOCUMENTEN     - links naar PDF's
+    CONTACT        - e-mailadressen en adres
+    VOETTEKST      - onderaan de pagina
+
+  Let op: de namen van de leiding staan ENKEL bij de groepen.
+  Er is geen aparte publieke leidingspagina.
+
+=====================================================================
+-->
+
+<style>
+/* ==================================================================
+   KLEUREN
+   ================================================================== */
+:root {
+  --navy:  #12294A;
+  --rood:  #C0272D;
+  --creme: #FAF5EC;
+  --wit:   #FFFFFF;
+  --lijn:  #DDDDDD;
+}
+
+/* ==================================================================
+   BASISOPMAAK
+   ================================================================== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--wit);
+  color: var(--navy);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.kolom {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1 { font-size: 34px; margin: 0 0 5px 0; }
+h2 { font-size: 24px; margin: 0 0 15px 0; border-bottom: 3px solid var(--rood); display: inline-block; padding-bottom: 4px; }
+h3 { font-size: 18px; margin: 0 0 4px 0; }
+p  { margin: 0 0 12px 0; }
+a  { color: var(--rood); }
+
+/* ==================================================================
+   MENU
+   ================================================================== */
+header {
+  background: var(--navy);
+  color: var(--wit);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+}
+
+.menu a {
+  color: var(--wit);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 5px 12px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+
+.menu a:hover,
+.menu a.actief {
+  background: rgba(255,255,255,0.18);
+  text-decoration: none;
+}
+
+/* ==================================================================
+   KOP
+   ================================================================== */
+.kop {
+  background: var(--navy);
+  color: var(--wit);
+  padding: 36px 0 40px 0;
+  border-bottom: 6px solid var(--rood);
+}
+.kop p { margin: 0; font-size: 19px; }
+
+/* ==================================================================
+   PAGINA-SECTIES (tonen/verbergen via JS)
+   ================================================================== */
+.pagina { display: none; padding: 40px 0; }
+.pagina.actief { display: block; }
+
+/* ==================================================================
+   VAKKEN, LIJSTEN, ETC.
+   ================================================================== */
+.vak {
+  background: var(--creme);
+  border-left: 5px solid var(--rood);
+  padding: 15px 20px;
+  margin-bottom: 12px;
+}
+
+ul.lijst { list-style: none; padding: 0; margin: 0; }
+ul.lijst li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--lijn);
+}
+
+.datum { font-weight: bold; }
+.leeftijd { color: var(--rood); font-weight: bold; }
+
+.leiding-groep {
+  font-size: 15px;
+  color: #555;
+  margin-top: 6px;
+}
+.leiding-groep strong {
+  color: var(--navy);
+}
+
+/* ==================================================================
+   VOETTEKST
+   ================================================================== */
+footer {
+  background: var(--navy);
+  color: var(--wit);
+  padding: 30px 0;
+  font-size: 15px;
+  border-top: 4px solid var(--rood);
+}
+footer a { color: var(--wit); }
+footer a:hover { text-decoration: underline; }
+
+/* ==================================================================
+   RESPONSIEF
+   ================================================================== */
+@media (max-width: 600px) {
+  h1 { font-size: 24px; }
+  .kop p { font-size: 16px; }
+  .menu a { font-size: 13px; padding: 5px 8px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==================================================================
+     MENU
+     ================================================================== -->
+<header>
+  <div class="kolom menu">
+    <a onclick="toonPagina('over-ons')" data-id="over-ons">Over ons</a>
+    <a onclick="toonPagina('kalender')" data-id="kalender">Kalender</a>
+    <a onclick="toonPagina('groepen')" data-id="groepen">Groepen</a>
+    <a onclick="toonPagina('inschrijven')" data-id="inschrijven">Inschrijven</a>
+    <a onclick="toonPagina('verhuur')" data-id="verhuur">Verhuur</a>
+    <a onclick="toonPagina('documenten')" data-id="documenten">Documenten</a>
+    <a onclick="toonPagina('contact')" data-id="contact">Contact</a>
+  </div>
+</header>
+
+
+<!-- ==================================================================
+     KOP
+     ================================================================== -->
+<div class="kop">
+  <div class="kolom">
+    <h1>Chiro Spirit Heverlee</h1>
+    <p>Elke zondag van 14u tot 17u30 &nbsp;&middot;&nbsp; Huttelaan 30, 3001 Heverlee</p>
+  </div>
+</div>
+
+
+<!-- ==================================================================
+     OVER ONS
+     ================================================================== -->
+<div class="pagina actief" id="over-ons">
+  <div class="kolom">
+    <h2>Over ons</h2>
+
+    <p>Chiro Spirit is de jeugdbeweging van Heverlee. Elke zondagnamiddag komen
+    kinderen en jongeren samen in onze lokalen aan de Huttelaan om te spelen:
+    binnen, buiten, in het bos of op het plein. Onze leiding is een groep
+    vrijwilligers die dat elke week voorbereidt.</p>
+
+    <p>Kom gerust eens proberen. Inschrijven op voorhand hoeft niet.</p>
+
+    <p><strong>About us.</strong> Chiro is a Flemish youth movement. Every Sunday
+    afternoon children and teenagers get together to play games, go on walks and
+    do crafts, guided by a team of volunteers. Everyone is welcome. Just drop by,
+    or send us an email if you would like to know more.</p>
+  </div>
+</div>
+
+
+<!-- ==================================================================
+     KALENDER
+     ================================================================== -->
+<div class="pagina" id="kalender">
+  <div class="kolom">
+    <h2>Kalender</h2>
+
+    <ul class="lijst">
+      <li><span class="datum">Elke zondag</span> &ndash; Chironamiddag in de lokalen</li>
+      <li><span class="datum">19 oktober</span> &ndash; Spaghettifeest</li>
+      <li><span class="datum">Najaar</span> &ndash; Weekend voor de Tito's en Kespi's</li>
+      <li><span class="datum">Voorjaar</span> &ndash; Startdag nieuwe leiding</li>
+      <li><span class="datum">Juli</span> &ndash; Zomerkamp, alle groepen</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ==================================================================
+     GROEPEN
+     Leiding staat hier per groep. Verander "Naam" naar de echte namen.
+     ================================================================== -->
+<div class="pagina" id="groepen">
+  <div class="kolom">
+    <h2>Groepen</h2>
+
+    <div class="vak">
+      <h3>Speelclub</h3>
+      <p class="leeftijd">6-7 jaar &middot; 1ste en 2de leerjaar</p>
+      <p>De jongste bende. Op tocht met de hele groep, knutselen tot de tafel vol
+      lijm zit, en spelletjes waarbij iedereen kan meedoen.</p>
+      <p class="leiding-groep"><strong>Leiding:</strong> Naam, Naam</p>
+    </div>
+
+    <div class="vak">
+      <h3>Kriebels</h3>
+      <p class="leeftijd">8-9 jaar &middot; 3de en 4de leerjaar</p>
+      <p>Een namiddag kan alle kanten op: een groot bosspel, een knutselwerk of
+      met zijn allen naar het zwembad.</p>
+      <p class="leiding-groep"><strong>Leiding:</strong> Naam, Naam</p>
+    </div>
+
+    <div class="vak">
+      <h3>Rakwi's</h3>
+      <p class="leeftijd">10-11 jaar &middot; 5de en 6de leerjaar</p>
+      <p>Er wordt stevig gespeeld op het plein, en tussendoor zakken we neer in
+      het lokaal met muziek en veel verhalen.</p>
+      <p class="leiding-groep"><strong>Leiding:</strong> Naam, Naam</p>
+    </div>
+
+    <div class="vak">
+      <h3>Tito's</h3>
+      <p class="leeftijd">12-14 jaar &middot; 1ste tot 3de middelbaar</p>
+      <p>Grotere plannen: een fietstocht in de buurt, een eigen tentoonstelling,
+      een vlot bouwen of een competitie die weken doorloopt.</p>
+      <p class="leiding-groep"><strong>Leiding:</strong> Naam, Naam</p>
+    </div>
+
+    <div class="vak">
+      <h3>Kespi's</h3>
+      <p class="leeftijd">15-17 jaar &middot; 4de en 5de middelbaar</p>
+      <p>De oudsten. Pittige spelen, lange tochten en sjorwerk waar een echte
+      toren uit komt. Uitdagingen zijn hier het punt.</p>
+      <p class="leiding-groep"><strong>Leiding:</strong> Naam, Naam</p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ==================================================================
+     INSCHRIJVEN
+     ================================================================== -->
+<div class="pagina" id="inschrijven">
+  <div class="kolom">
+    <h2>Inschrijven</h2>
+
+    <p>Inschrijven op voorhand is niet verplicht. Je kan elke zondag
+    van 14u tot 17u30 gewoon binnenlopen aan de Huttelaan 30 in Heverlee.</p>
+
+    <p>Wil je toch eerst contact opnemen of meer weten?
+    Stuur een mailtje naar
+    <a href="mailto:chirospiritheverlee@gmail.com">chirospiritheverlee@gmail.com</a>
+    en we helpen je verder.</p>
+
+    <p>Je kan ook al een inschrijvingsformulier downloaden en meebrengen op
+    de eerste zondag: <a href="documenten/inschrijvingsformulier.pdf" target="_blank" rel="noopener noreferrer">Download inschrijvingsformulier (PDF)</a>.</p>
+
+  </div>
+</div>
+
+
+<!-- ==================================================================
+     VERHUUR
+     ================================================================== -->
+<div class="pagina" id="verhuur">
+  <div class="kolom">
+    <h2>Verhuur</h2>
+
+    <p>Je kan onze lokalen huren voor een weekend of een kamp.</p>
+
+    <div class="vak">
+      <p>Vragen over de huur? Mail naar
+      <a href="mailto:verhuur.chirospirit@gmail.com">verhuur.chirospirit@gmail.com</a></p>
+      <p>De beschikbare data en de praktische info staan op
+      <a href="https://www.kampas.be/nl/verblijf/lokalen-chiro-spirit-heverlee-1" target="_blank" rel="noopener noreferrer">Kampas</a>.</p>
+    </div>
+
+    <p>Adres van de lokalen: Huttelaan 30, 3001 Heverlee. Vraag tijdig aan, want
+    in de zomer is het druk.</p>
+  </div>
+</div>
+
+
+<!-- ==================================================================
+     DOCUMENTEN
+     ================================================================== -->
+<div class="pagina" id="documenten">
+  <div class="kolom">
+    <h2>Documenten</h2>
+
+    <ul class="lijst">
+      <li><a href="documenten/inschrijvingsformulier.pdf" target="_blank" rel="noopener noreferrer">Inschrijvingsformulier</a></li>
+      <li><a href="documenten/medische-fiche.pdf" target="_blank" rel="noopener noreferrer">Medische fiche</a></li>
+      <li><a href="documenten/kampbrief.pdf" target="_blank" rel="noopener noreferrer">Kampbrief</a></li>
+      <li><a href="documenten/huurreglement.pdf" target="_blank" rel="noopener noreferrer">Huurreglement lokalen</a></li>
+      <li><a href="documenten/jaarkalender.pdf" target="_blank" rel="noopener noreferrer">Jaarkalender</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ==================================================================
+     CONTACT
+     ================================================================== -->
+<div class="pagina" id="contact">
+  <div class="kolom">
+    <h2>Contact</h2>
+
+    <p><strong>Algemene vragen</strong><br>
+    <a href="mailto:chirospiritheverlee@gmail.com">chirospiritheverlee@gmail.com</a></p>
+
+    <p><strong>Verhuur van de lokalen</strong><br>
+    <a href="mailto:verhuur.chirospirit@gmail.com">verhuur.chirospirit@gmail.com</a></p>
+
+    <p><strong>Adres</strong><br>
+    Chiro Spirit Heverlee<br>
+    Huttelaan 30<br>
+    3001 Heverlee</p>
+
+    <p><strong>Wanneer</strong><br>
+    Elke zondag van 14u tot 17u30. Loop gerust binnen tijdens de activiteiten.</p>
+  </div>
+</div>
+
+
+<!-- ==================================================================
+     VOETTEKST
+     ================================================================== -->
+<footer>
+  <div class="kolom">
+    <p><strong>Chiro Spirit Heverlee</strong><br>
+    Huttelaan 30, 3001 Heverlee</p>
+
+    <p>
+      <a href="https://www.facebook.com/ChiroSpiritHeverlee" target="_blank" rel="noopener noreferrer">Facebook</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://www.instagram.com/chirospiritheverlee" target="_blank" rel="noopener noreferrer">Instagram</a>
+      &nbsp;&middot;&nbsp;
+      <a href="mailto:chirospiritheverlee@gmail.com">chirospiritheverlee@gmail.com</a>
+    </p>
+  </div>
+</footer>
+
+
+<script>
+function toonPagina(id) {
+  // verberg alle pagina's
+  document.querySelectorAll('.pagina').forEach(function(p) {
+    p.classList.remove('actief');
+  });
+  // toon de gewenste pagina
+  var doel = document.getElementById(id);
+  if (doel) doel.classList.add('actief');
+
+  // markeer actieve menuknop
+  document.querySelectorAll('.menu a').forEach(function(a) {
+    a.classList.toggle('actief', a.dataset.id === id);
+  });
+
+  // scroll naar boven
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // sla op in de URL zodat de pagina refreshbaar is
+  history.pushState(null, '', '#' + id);
+}
+
+// laad de juiste sectie op basis van de URL-hash
+(function() {
+  var hash = location.hash.slice(1);
+  var geldig = ['over-ons','kalender','groepen','inschrijven','verhuur','documenten','contact'];
+  if (hash && geldig.indexOf(hash) !== -1) {
+    toonPagina(hash);
+  } else {
+    toonPagina('over-ons');
+  }
+})();
+
+// werkt ook als de gebruiker de browser-terug knop gebruikt
+window.addEventListener('popstate', function() {
+  var hash = location.hash.slice(1);
+  if (hash) toonPagina(hash);
+});
+</script>
+
+</body>
+</html>
