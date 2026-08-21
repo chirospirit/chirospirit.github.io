@@ -19,8 +19,6 @@ De site wordt beheerd door vrijwilligers die geen HTML kennen.
 
 - Elke zondag van 14u tot 17u30
 - Huttelaan 30, 3001 Heverlee
-- Vijf groepen: Speelclub (6-7), Kriebels (8-9), Rakwi's (10-11),
-  Tito's (12-14), Kespi's (15-17)
 
 ## Werkwijze
 
