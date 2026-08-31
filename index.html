@@ -207,6 +207,22 @@ nav.navbar .nav-link:hover {
   margin: 24px auto;
 }
 
+/* Foto-galerij: rijen van 3 foto's, gebruikt bij Verhuur (Bouw/Jokri) */
+.foto-galerij {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 8px 0 16px 0;
+}
+.foto-galerij .foto {
+  width: calc(33.333% - 8px);
+  max-width: none;
+  margin-top: 0;
+}
+@media only screen and (max-width: 600px) {
+  .foto-galerij .foto { width: 100%; }
+}
+
 ul.lijst { list-style: none; padding: 0; margin: 0; }
 ul.lijst li {
   padding: 7px 2px;
@@ -486,13 +502,30 @@ footer a { color: var(--teal); }
   </ul>
   <p class="kamp-bbq"><strong>De lokalen kunnen NIET gehuurd worden voor fuiven en inleefweken.</strong></p>
 
-  <!-- Foto's per ruimte: voeg hier afbeeldingen toe in de map "afbeeldingen" en
-       verwijs ernaar met <img src="afbeeldingen/....jpg" class="foto"> -->
+  <!-- Foto's per ruimte: de foto's staan in de map "verhuurfotos".
+       Wil je een foto vervangen of toevoegen? Zet het bestand in die map en
+       verwijs ernaar met <img src="verhuurfotos/....jpeg" class="foto">
+       binnen een <div class="foto-galerij"> (dat zet ze netjes in rijen van 3). -->
   <h3>Jokri</h3>
-  <p><em>Foto's volgen binnenkort.</em></p>
+  <div class="foto-galerij">
+    <img src="verhuurfotos/jokri%201.jpeg" alt="Foto van Jokri" class="foto">
+    <img src="verhuurfotos/jokri%202.jpeg" alt="Foto van Jokri" class="foto">
+    <img src="verhuurfotos/jokri%203.jpeg" alt="Foto van Jokri" class="foto">
+    <img src="verhuurfotos/jokri%204.jpeg" alt="Foto van Jokri" class="foto">
+    <img src="verhuurfotos/jokri%205.jpeg" alt="Foto van Jokri" class="foto">
+    <img src="verhuurfotos/jokri%206.jpeg" alt="Foto van Jokri" class="foto">
+  </div>
 
   <h3>Bouw</h3>
-  <p><em>Foto's volgen binnenkort.</em></p>
+  <div class="foto-galerij">
+    <img src="verhuurfotos/bouw%201.jpeg" alt="Foto van de Bouw" class="foto">
+    <img src="verhuurfotos/bouw%202.jpeg" alt="Foto van de Bouw" class="foto">
+    <img src="verhuurfotos/bouw%203.jpeg" alt="Foto van de Bouw" class="foto">
+    <img src="verhuurfotos/bouw%204.jpeg" alt="Foto van de Bouw" class="foto">
+    <img src="verhuurfotos/bouw%205.jpeg" alt="Foto van de Bouw" class="foto">
+    <img src="verhuurfotos/bouw%206.jpeg" alt="Foto van de Bouw" class="foto">
+    <img src="verhuurfotos/bouw%207.jpeg" alt="Foto van de Bouw" class="foto">
+  </div>
 
   <h3>Terrein</h3>
   <p><em>Foto's volgen binnenkort.</em></p>
