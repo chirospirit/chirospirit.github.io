@@ -16,8 +16,8 @@ local_backend: true
 # in plaats van rechtstreeks naar main te gaan — zelfde gewoonte als nu.
 #publish_mode: editorial_workflow
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "afbeeldingen/uploads"
+public_folder: "/afbeeldingen/uploads" 
 
 collections:
 
@@ -30,7 +30,7 @@ collections:
     files:
       - name: "site"
         label: "Site-instellingen"
-        file: "content/instellingen/site.yml"
+        file: "_data/site.yml" 
         fields:
           - {label: "Adres", name: "adres", widget: "string"}
           - {label: "Openingsuren", name: "uren", widget: "string"}
@@ -107,6 +107,8 @@ collections:
             widget: "list"
           - {label: "Prijs per weekend", name: "prijs", widget: "string"}
           - {label: "Huishoudelijk reglement (PDF)", name: "reglement", widget: "file"}
+          - {label: "Terrein - tekst", name: "terrein", widget: "text", required: false}
+          - {label: "Link naar Kampas", name: "kampas_link", widget: "string"}
           - label: "Foto's Jokri"
             name: "fotos_jokri"
             widget: "list"
@@ -115,7 +117,6 @@ collections:
             name: "fotos_bouw"
             widget: "list"
             field: {label: "Foto", name: "foto", widget: "image"}
-
   # -------------------------------------------------------------
   # DOCUMENTEN — 't Gazetje, kampboekje, medisch getuigschrift...
   # -------------------------------------------------------------

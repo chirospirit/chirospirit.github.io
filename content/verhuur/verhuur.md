@@ -14,4 +14,6 @@ fotos_jokri:
 fotos_bouw:
   - foto: "/images/verhuurfotos/bouw-1.jpeg"
   - foto: "/images/verhuurfotos/bouw-2.jpeg"
+terrein: "Foto's volgen binnenkort."
+kampas_link: "https://www.kampas.be/nl/verblijf/lokalen-chiro-spirit-heverlee-1"
 ---

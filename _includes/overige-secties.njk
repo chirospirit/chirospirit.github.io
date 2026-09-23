@@ -1,0 +1,84 @@
+{# =====================================================================
+   Plaats dit als _includes/overige-secties.njk
+   Toont: Over ons, Inschrijven, Verhuur, Documenten, Contact
+   ===================================================================== #}
+
+<section id="over-ons" class="pagina">
+  <h2>Over ons</h2>
+  {% for pagina in collections.overOns %}
+    {{ pagina.templateContent | safe }}
+  {% endfor %}
+</section>
+
+<section id="inschrijven" class="pagina">
+  <h2>Inschrijven</h2>
+  {% for pagina in collections.inschrijvenPagina %}
+    {{ pagina.templateContent | safe }}
+    <p><a href="{{ pagina.data.inschrijflink }}" target="_blank" rel="noopener noreferrer">Inschrijven NIEUWE leden</a></p>
+  {% endfor %}
+</section>
+
+<section id="verhuur" class="pagina">
+  <h2>Verhuur</h2>
+  {% for v in collections.verhuurPagina %}
+    <p>{{ v.data.intro }}</p>
+
+    <h3>Wat wordt er verhuurd?</h3>
+    <ul class="lijst lijst-bollen">
+      {% for item in v.data.voorzieningen %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+
+    <h3>Jokri</h3>
+    <div class="foto-galerij">
+      {% for foto in v.data.fotos_jokri %}
+        <img src="{{ foto.foto }}" alt="Foto van Jokri" class="foto">
+      {% endfor %}
+    </div>
+
+    <h3>Bouw</h3>
+    <div class="foto-galerij">
+      {% for foto in v.data.fotos_bouw %}
+        <img src="{{ foto.foto }}" alt="Foto van de Bouw" class="foto">
+      {% endfor %}
+    </div>
+
+    <h3>Terrein</h3>
+    <p>{{ v.data.terrein }}</p>
+
+    <h3>Voor welke prijs?</h3>
+    <p>{{ v.data.prijs }}</p>
+
+    <h3>Huishoudelijk reglement</h3>
+    <p><a href="{{ v.data.reglement }}" target="_blank" rel="noopener noreferrer">Huishoudelijk reglement Chiro Spirit Heverlee</a></p>
+
+    <h3>Link naar Kampas</h3>
+    <p><a href="{{ v.data.kampas_link }}" target="_blank" rel="noopener noreferrer">{{ v.data.kampas_link }}</a></p>
+  {% endfor %}
+</section>
+
+<section id="documenten">
+  <h2>Documenten</h2>
+  <ul class="lijst">
+    {% for doc in collections.documentenLijst %}
+      <li>
+        <a href="{{ doc.data.bestand }}" target="_blank" rel="noopener noreferrer">{{ doc.data.naam }}</a>
+        {% if doc.data.info %}<span class="lijst-info">{{ doc.data.info }}</span>{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p><strong>Algemene vragen</strong><br>
+  <a href="mailto:{{ site.email_algemeen }}">{{ site.email_algemeen }}</a></p>
+
+  <p><strong>Verhuur van de lokalen</strong><br>
+  <a href="mailto:{{ site.email_verhuur }}">{{ site.email_verhuur }}</a></p>
+
+  <p><strong>Adres</strong><br>{{ site.adres }}</p>
+
+  <p><strong>Wanneer</strong><br>{{ site.uren }}</p>
+</section>
