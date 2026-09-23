@@ -55,6 +55,20 @@ nav.navbar .nav-link.active, nav.navbar .nav-link:hover { color: var(--wit) !imp
 
 .inhoud { padding: 0.5rem 2rem; }
 @media only screen and (max-width: 600px) { .inhoud { padding: 0.5rem 0.75rem; } }
+footer { padding: 0.5rem 2rem; }
+footer .voetrij {
+  border-top: 1px dotted var(--paars);
+  padding-top: .5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .voetrij > div { flex: 0 0 100%; max-width: 100%; }
+footer p.small { font-size: .8rem; margin: 0; color: var(--grijs); }
+footer a { color: var(--teal); }
+@media (min-width: 768px) {
+  footer .voetrij > div { flex: 0 0 50%; max-width: 50%; }
+  footer .voetrij > div:last-child { text-align: right; }
+}
 
 .pagina { display: none; padding: 20px 0 30px 0; }
 .pagina.actief { display: block; }
@@ -117,10 +131,31 @@ ul.lijst-bollen li:before { content: "\2022  "; }
     </div>
   </nav>
 
-  <div class="row mt-3 pb-0 inhoud">
+   <div class="row mt-3 pb-0 inhoud">
     {% include "kalender-en-groepen.njk" %}
     {% include "overige-secties.njk" %}
   </div>
+
+  <footer>
+    <div class="voetrij">
+      <div>
+        <p class="small">
+          <strong>Chiro Spirit Heverlee</strong><br>
+          {{ site.adres }}<br>
+          {{ site.uren }}
+        </p>
+      </div>
+      <div>
+        <p class="small">
+          <a href="{{ site.facebook }}" target="_blank" rel="noopener noreferrer">Facebook</a><br>
+          <a href="{{ site.instagram }}" target="_blank" rel="noopener noreferrer">Instagram</a><br>
+          <a href="mailto:{{ site.email_algemeen }}">{{ site.email_algemeen }}</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</main>
 
 </main>
 

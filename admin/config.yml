@@ -9,7 +9,7 @@
 backend:
   name: github
   repo: chirospirit/chirospirit.github.io
-  branch: main
+  branch: cms-migratie
 local_backend: true
 
 # editorial_workflow zorgt dat elke wijziging als pull request binnenkomt
