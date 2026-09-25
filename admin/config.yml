@@ -1,0 +1,130 @@
+# =====================================================================
+# CMS-CONFIGURATIE voor Chiro Spirit Heverlee
+# =====================================================================
+# Dit bestand bepaalt welke formuliervelden de vrijwilligers te zien
+# krijgen in het admin-paneel (bereikbaar via jullie-site.be/admin).
+# Elke wijziging die zij opslaan wordt automatisch een commit (of PR,
+# zie publish_mode) naar deze GitHub-repo. Niemand raakt nog HTML aan.
+
+backend:
+  name: github
+  repo: chirospirit/chirospirit.github.io
+  branch: cms-migratie
+local_backend: true
+
+# editorial_workflow zorgt dat elke wijziging als pull request binnenkomt
+# in plaats van rechtstreeks naar main te gaan — zelfde gewoonte als nu.
+#publish_mode: editorial_workflow
+
+media_folder: "afbeeldingen/uploads"
+public_folder: "/afbeeldingen/uploads" 
+
+collections:
+
+  # -------------------------------------------------------------
+  # ALGEMENE INSTELLINGEN — dingen die overal op de site voorkomen
+  # (adres, uren, social links) — één vast bestand, geen lijst.
+  # -------------------------------------------------------------
+  - name: "instellingen"
+    label: "Algemene instellingen"
+    files:
+      - name: "site"
+        label: "Site-instellingen"
+        file: "_data/site.yml" 
+        fields:
+          - {label: "Adres", name: "adres", widget: "string"}
+          - {label: "Openingsuren", name: "uren", widget: "string"}
+          - {label: "Facebook-link", name: "facebook", widget: "string"}
+          - {label: "Instagram-link", name: "instagram", widget: "string"}
+          - {label: "Algemeen e-mailadres", name: "email_algemeen", widget: "string"}
+          - {label: "Verhuur e-mailadres", name: "email_verhuur", widget: "string"}
+
+  # -------------------------------------------------------------
+  # VASTE PAGINA'S — Over ons, Inschrijven
+  # -------------------------------------------------------------
+  - name: "pagina"
+    label: "Vaste pagina's"
+    files:
+      - name: "over-ons"
+        label: "Over ons"
+        file: "content/pagina/over-ons.md"
+        fields:
+          - {label: "Inhoud", name: "body", widget: "markdown"}
+
+      - name: "inschrijven"
+        label: "Inschrijven"
+        file: "content/pagina/inschrijven.md"
+        fields:
+          - {label: "Inleidende tekst", name: "intro", widget: "markdown"}
+          - {label: "Link inschrijfformulier", name: "inschrijflink", widget: "string"}
+
+  # -------------------------------------------------------------
+  # KALENDER — elke activiteit is een eigen bestand, dus vrijwilligers
+  # kunnen er zelf bijmaken/schrappen zonder een lange lijst te bewerken.
+  # -------------------------------------------------------------
+  - name: "kalender"
+    label: "Kalender"
+    folder: "content/kalender"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Datum"
+        name: "datum"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        picker_utc: true
+      - {label: "Titel", name: "titel", widget: "string"}
+      - {label: "Beschrijving", name: "beschrijving", widget: "text", required: false}
+
+  # -------------------------------------------------------------
+  # GROEPEN — vaste lijst (Ribbels t.e.m. Aspi's), geen nieuwe
+  # groepen bijmaken, dus create: false.
+  # -------------------------------------------------------------
+  - name: "groepen"
+    label: "Groepen"
+    folder: "content/groepen"
+    create: false
+    fields:
+      - {label: "Naam", name: "naam", widget: "string"}
+      - {label: "Leeftijd", name: "leeftijd", widget: "string"}
+      - {label: "Beschrijving", name: "beschrijving", widget: "text"}
+      - {label: "Leiding", name: "leiding", widget: "text"}
+
+  # -------------------------------------------------------------
+  # VERHUUR — één pagina, maar met herhaalbare foto-lijsten
+  # -------------------------------------------------------------
+  - name: "verhuur"
+    label: "Verhuur"
+    files:
+      - name: "verhuur"
+        label: "Verhuurpagina"
+        file: "content/verhuur/verhuur.md"
+        fields:
+          - {label: "Intro", name: "intro", widget: "text"}
+          - label: "Wat wordt er verhuurd?"
+            name: "voorzieningen"
+            widget: "list"
+          - {label: "Prijs per weekend", name: "prijs", widget: "string"}
+          - {label: "Huishoudelijk reglement (PDF)", name: "reglement", widget: "file"}
+          - {label: "Terrein - tekst", name: "terrein", widget: "text", required: false}
+          - {label: "Link naar Kampas", name: "kampas_link", widget: "string"}
+          - label: "Foto's Jokri"
+            name: "fotos_jokri"
+            widget: "list"
+            field: {label: "Foto", name: "foto", widget: "image"}
+          - label: "Foto's Bouw"
+            name: "fotos_bouw"
+            widget: "list"
+            field: {label: "Foto", name: "foto", widget: "image"}
+  # -------------------------------------------------------------
+  # DOCUMENTEN — 't Gazetje, kampboekje, medisch getuigschrift...
+  # -------------------------------------------------------------
+  - name: "documenten"
+    label: "Documenten"
+    folder: "content/documenten"
+    create: true
+    fields:
+      - {label: "Naam", name: "naam", widget: "string"}
+      - {label: "Bestand (PDF)", name: "bestand", widget: "file"}
+      - {label: "Extra info (bv. beschikbaar vanaf)", name: "info", widget: "string", required: false}
