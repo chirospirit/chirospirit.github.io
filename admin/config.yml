@@ -10,11 +10,13 @@ backend:
   name: github
   repo: chirospirit/chirospirit.github.io
   branch: cms-migratie
-local_backend: true
+  base_url: http://localhost:3000
+
+#local_backend: true
 
 # editorial_workflow zorgt dat elke wijziging als pull request binnenkomt
 # in plaats van rechtstreeks naar main te gaan — zelfde gewoonte als nu.
-#publish_mode: editorial_workflow
+publish_mode: editorial_workflow
 
 media_folder: "afbeeldingen/uploads"
 public_folder: "/afbeeldingen/uploads" 
@@ -67,6 +69,7 @@ collections:
     folder: "content/kalender"
     create: true
     slug: "{{slug}}"
+    identifier_field: "titel"
     fields:
       - label: "Datum"
         name: "datum"
