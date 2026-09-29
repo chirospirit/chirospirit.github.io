@@ -35,6 +35,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("verhuurPagina", api => api.getFilteredByGlob("content/verhuur/verhuur.md"));
   eleventyConfig.addCollection("documentenLijst", api => api.getFilteredByGlob("content/documenten/*.md"));
 
+  eleventyConfig.ignores.add("README.md");
+  eleventyConfig.ignores.add("LEES-MIJ.md");
+  eleventyConfig.ignores.add("CLAUDE.md");
+
   return {
     dir: { input: ".", includes: "_includes", output: "_site" }
   };

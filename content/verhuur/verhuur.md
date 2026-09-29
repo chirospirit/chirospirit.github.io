@@ -9,11 +9,11 @@ voorzieningen:
 prijs: "290 euro per weekend (vrijdagavond tot zondagochtend), exclusief water, elektriciteit en gas"
 reglement: "/documenten/HUISHOUDELIJK_REGELEMENT_VERHUUR_2026-2027.pdf"
 fotos_jokri:
-  - foto: "/images/verhuurfotos/jokri-1.jpeg"
-  - foto: "/images/verhuurfotos/jokri-2.jpeg"
+  - foto: "/images/verhuurfotos/jokri_1.jpeg"
+  - foto: "/images/verhuurfotos/jokri_2.jpeg"
 fotos_bouw:
-  - foto: "/images/verhuurfotos/bouw-1.jpeg"
-  - foto: "/images/verhuurfotos/bouw-2.jpeg"
+  - foto: "/images/verhuurfotos/bouw_1.jpeg"
+  - foto: "/images/verhuurfotos/bouw_2.jpeg"
 terrein: "Foto's volgen binnenkort."
 kampas_link: "https://www.kampas.be/nl/verblijf/lokalen-chiro-spirit-heverlee-1"
 ---
