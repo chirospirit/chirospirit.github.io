@@ -15,6 +15,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("verhuurfotos");
   eleventyConfig.addPassthroughCopy("documenten");
   eleventyConfig.addPassthroughCopy("admin");
+  eleventyConfig.addPassthroughCopy("favicon.png");    // NIEUW
+  eleventyConfig.addPassthroughCopy("CNAME");         // NIEUW  
 
   eleventyConfig.addCollection("groepenOpVolgorde", function (api) {
     const volgorde = ["speelclub", "kriebels", "rakwis", "ketis", "aspis"];
