@@ -1,5 +1,0 @@
-Client ID
-Ov23libpcpucmJm80EAA
-
-Client Secret:
-4cf172dcf31d0e0e82ec079722c0088a325b1557
