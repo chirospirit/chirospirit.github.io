@@ -4,12 +4,16 @@
 // er is dus nog steeds geen eigen server nodig. Hosting blijft
 // gewoon GitHub Pages, exact zoals nu.
 // =====================================================================
+const yaml = require("js-yaml");
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return new Date(dateObj).toLocaleDateString("nl-BE", {
       day: "numeric", month: "long", year: "numeric"
     });
   });
+
+  eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
 
   eleventyConfig.addPassthroughCopy("afbeeldingen");   // was: "images"
   eleventyConfig.addPassthroughCopy("verhuurfotos");

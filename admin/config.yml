@@ -57,8 +57,7 @@ collections:
         label: "Inschrijven"
         file: "content/pagina/inschrijven.md"
         fields:
-          - {label: "Inleidende tekst", name: "intro", widget: "markdown"}
-          - {label: "Link inschrijfformulier", name: "inschrijflink", widget: "string"}
+          - {label: "Inhoud", name: "body", widget: "markdown"}
 
   # -------------------------------------------------------------
   # KALENDER — elke activiteit is een eigen bestand, dus vrijwilligers

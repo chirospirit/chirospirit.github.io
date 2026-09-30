@@ -14,7 +14,6 @@
   <h2>Inschrijven</h2>
   {% for pagina in collections.inschrijvenPagina %}
     {{ pagina.templateContent | safe }}
-    <p><a href="{{ pagina.data.inschrijflink }}" target="_blank" rel="noopener noreferrer">Inschrijven NIEUWE leden</a></p>
   {% endfor %}
 </section>
 
