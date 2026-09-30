@@ -108,10 +108,7 @@ collections:
           - label: "Wat wordt er verhuurd?"
             name: "voorzieningen"
             widget: "list"
-          - {label: "Prijs per weekend", name: "prijs", widget: "string"}
-          - {label: "Huishoudelijk reglement (PDF)", name: "reglement", widget: "file"}
-          - {label: "Terrein - tekst", name: "terrein", widget: "text", required: false}
-          - {label: "Link naar Kampas", name: "kampas_link", widget: "string"}
+          - {label: "Waarschuwing (bv. geen fuiven)", name: "waarschuwing", widget: "string", required: false}
           - label: "Foto's Jokri"
             name: "fotos_jokri"
             widget: "list"
@@ -120,6 +117,11 @@ collections:
             name: "fotos_bouw"
             widget: "list"
             field: {label: "Foto", name: "foto", widget: "image"}
+          - {label: "Terrein - tekst", name: "terrein", widget: "text", required: false}
+          - {label: "Waar - tekst", name: "waar", widget: "text"}
+          - {label: "Prijs per weekend", name: "prijs", widget: "string"}
+          - {label: "Huishoudelijk reglement (PDF)", name: "reglement", widget: "file"}
+          - {label: "Link naar Kampas", name: "kampas_link", widget: "string"}
   # -------------------------------------------------------------
   # DOCUMENTEN — 't Gazetje, kampboekje, medisch getuigschrift...
   # -------------------------------------------------------------

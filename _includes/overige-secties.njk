@@ -29,6 +29,7 @@
         <li>{{ item }}</li>
       {% endfor %}
     </ul>
+    {% if v.data.waarschuwing %}<p class="kamp-bbq"><strong>{{ v.data.waarschuwing }}</strong></p>{% endif %}
 
     <h3>Jokri</h3>
     <div class="foto-galerij">
@@ -47,14 +48,28 @@
     <h3>Terrein</h3>
     <p>{{ v.data.terrein }}</p>
 
+    <h3>Waar?</h3>
+    <p>{{ v.data.waar }}</p>
+
     <h3>Voor welke prijs?</h3>
     <p>{{ v.data.prijs }}</p>
 
     <h3>Huishoudelijk reglement</h3>
     <p><a href="{{ v.data.reglement }}" target="_blank" rel="noopener noreferrer">Huishoudelijk reglement Chiro Spirit Heverlee</a></p>
 
+    <h3>Contact</h3>
+    <p>Hebt u interesse of bijkomende vragen? U kan de verhuurverantwoordelijke bereiken via mail:
+    <a href="mailto:{{ site.email_verhuur }}">{{ site.email_verhuur }}</a><br>
+    of kijk op Kampas: <a href="{{ v.data.kampas_link }}" target="_blank" rel="noopener noreferrer">{{ v.data.kampas_link }}</a></p>
+
+    <h3>Verhuurkalender</h3>
+    <iframe
+      src="https://calendar.google.com/calendar/embed?src=39bm26amjfhn1nou9me1iohr38%40group.calendar.google.com&ctz=Europe%2FBrussels"
+      style="border: 0" width="100%" height="600" frameborder="0" scrolling="no">
+    </iframe>
+
     <h3>Link naar Kampas</h3>
-    <p><a href="{{ v.data.kampas_link }}" target="_blank" rel="noopener noreferrer">{{ v.data.kampas_link }}</a></p>
+    <p><a href="{{ v.data.kampas_link }}" target="_blank" rel="noopener noreferrer">Kampas Chiro Spirit Heverlee</a></p>
   {% endfor %}
 </section>
 
