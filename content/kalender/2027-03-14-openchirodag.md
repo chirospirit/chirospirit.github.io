@@ -1,7 +1,4 @@
 ---
-date: 2027-03-14
-title: "Openchirodag"
-category: speciale-zondag
+datum: 2027-03-14
+titel: "Openchirodag"
 ---
-
-# Openchirodag
