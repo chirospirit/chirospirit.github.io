@@ -1,0 +1,32 @@
+{# =====================================================================
+   VOORBEELD: hoe de publieke pagina de content/-bestanden toont.
+   Dit stukje vervangt het handmatig getypte HTML-blok dat nu in
+   index.html staat — de vrijwilliger past enkel nog de bestanden in
+   content/ aan (via het admin-paneel), dit sjabloon blijft altijd
+   hetzelfde en moet nooit meer aangeraakt worden.
+   ===================================================================== #}
+
+<section id="kalender" class="pagina">
+  <h2>Kalender</h2>
+  <ul class="lijst">
+    {% for item in collections.kalenderOpDatum %}
+      <li>
+        <strong>{{ item.data.datum | readableDate }}</strong> —
+        {{ item.data.titel }}
+        {% if item.data.beschrijving %}<br><span>{{ item.data.beschrijving }}</span>{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="groepen" class="pagina">
+  <h2>Groepen</h2>
+  {% for groep in collections.groepenOpVolgorde %}
+    <div class="vak">
+      <h3 class="vak-titel">{{ groep.data.naam }}</h3>
+      <p class="leeftijd">{{ groep.data.leeftijd }}</p>
+      <p>{{ groep.templateContent | safe }}</p>
+      <p class="leiding-groep"><strong>Leiding:</strong> {{ groep.data.leiding }}</p>
+    </div>
+  {% endfor %}
+</section>

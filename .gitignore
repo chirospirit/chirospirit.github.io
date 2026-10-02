@@ -1,0 +1,10 @@
+# Node
+node_modules/
+
+# Eleventy build-output (wordt elke keer opnieuw gegenereerd)
+_site/
+
+# Systeembestanden
+.DS_Store
+clientID.md
+.env
