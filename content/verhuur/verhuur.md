@@ -26,7 +26,9 @@ fotos_bouw:
   - foto: "/verhuurfotos/bouw_5.jpeg"
   - foto: "/verhuurfotos/bouw_6.jpeg"
   - foto: "/verhuurfotos/bouw_7.jpeg"
-terrein: "Foto's volgen binnenkort."
+fotos_terrein:
+  - foto: "/verhuurfotos/terrein_1.jpeg"
+  - foto: "/verhuurfotos/terrein_2.jpeg"
 waar: "Huttelaan 30, 3001 Heverlee. Centrum Leuven is op minder dan tien minuten bereikbaar met de fiets. Er is een supermarkt op enkele minuten fietsen."
 prijs: "Eén weekend (vrijdagavond tot zondagochtend) kost 290 euro (exclusief water, elektriciteit en gas)."
 reglement: "/documenten/HUISHOUDELIJK_REGELEMENT_VERHUUR 2026-2027.pdf"

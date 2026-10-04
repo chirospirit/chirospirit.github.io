@@ -46,7 +46,12 @@
     </div>
 
     <h3>Terrein</h3>
-    <p>{{ v.data.terrein }}</p>
+    {% if v.data.terrein %}<p>{{ v.data.terrein }}</p>{% endif %}
+    <div class="foto-galerij">
+      {% for foto in v.data.fotos_terrein %}
+        <img src="{{ foto.foto }}" alt="Foto van het terrein" class="foto">
+      {% endfor %}
+    </div>
 
     <h3>Waar?</h3>
     <p>{{ v.data.waar }}</p>
