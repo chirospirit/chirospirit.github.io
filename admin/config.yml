@@ -10,8 +10,7 @@ backend:
   name: github
   repo: chirospirit/chirospirit.github.io
   branch: cms-migratie
-  base_url: http://localhost:3000
-
+  base_url: https://chirospirit-cms-login.onrender.com
 #local_backend: true
 
 # editorial_workflow zorgt dat elke wijziging als pull request binnenkomt
