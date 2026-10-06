@@ -1,36 +1,44 @@
 ---
-intro: "Je kan onze lokalen huren voor een weekend of een kamp."
+intro: Je kan onze lokalen huren voor een weekend of een kamp.
 voorzieningen:
-  - "Groot speelplein en aangrenzend bos"
-  - "Maximale capaciteit van 25 personen"
-  - "Groot slaaplokaal"
-  - "Keuken met koelkast, gasvuur en watervoorziening"
-  - "Eetruimte naast de keuken"
-  - "Tafels en stoelen"
-  - "Sanitaire ruimte met vijf wc's en doucheruimte met voetbaldouches"
-  - "Kookgerief (potten & pannen, bestek, borden, ...)"
-  - "Kuisgerief (kuisproduct, dweil, ...)"
-waarschuwing: "De lokalen kunnen NIET gehuurd worden voor fuiven en inleefweken."
+  - Groot speelplein en aangrenzend bos
+  - Maximale capaciteit van 25 personen
+  - Groot slaaplokaal
+  - Keuken met koelkast
+  - gasvuur en watervoorziening
+  - Eetruimte naast de keuken
+  - Tafels en stoelen
+  - Sanitaire ruimte met vijf wc's en doucheruimte met voetbaldouches
+  - Kookgerief (potten & pannen
+  - bestek
+  - borden
+  - ..)
+  - Kuisgerief (kuisproduct
+  - dweil
+  - ...)
+waarschuwing: De lokalen kunnen NIET gehuurd worden voor fuiven en inleefweken.
 fotos_jokri:
-  - foto: "/verhuurfotos/jokri_1.jpeg"
-  - foto: "/verhuurfotos/jokri_2.jpeg"
-  - foto: "/verhuurfotos/jokri_3.jpeg"
-  - foto: "/verhuurfotos/jokri_4.jpeg"
-  - foto: "/verhuurfotos/jokri_5.jpeg"
-  - foto: "/verhuurfotos/jokri_6.jpeg"
+  - foto: /verhuurfotos/jokri_1.jpeg
+  - foto: /verhuurfotos/jokri_2.jpeg
+  - foto: /verhuurfotos/jokri_3.jpeg
+  - foto: /verhuurfotos/jokri_4.jpeg
+  - foto: /verhuurfotos/jokri_5.jpeg
+  - foto: /verhuurfotos/jokri_6.jpeg
 fotos_bouw:
-  - foto: "/verhuurfotos/bouw_1.jpeg"
-  - foto: "/verhuurfotos/bouw_2.jpeg"
-  - foto: "/verhuurfotos/bouw_3.jpeg"
-  - foto: "/verhuurfotos/bouw_4.jpeg"
-  - foto: "/verhuurfotos/bouw_5.jpeg"
-  - foto: "/verhuurfotos/bouw_6.jpeg"
-  - foto: "/verhuurfotos/bouw_7.jpeg"
+  - foto: /verhuurfotos/bouw_1.jpeg
+  - foto: /verhuurfotos/bouw_2.jpeg
+  - foto: /verhuurfotos/bouw_3.jpeg
+  - foto: /verhuurfotos/bouw_4.jpeg
+  - foto: /verhuurfotos/bouw_5.jpeg
+  - foto: /verhuurfotos/bouw_6.jpeg
+  - foto: /verhuurfotos/bouw_7.jpeg
 fotos_terrein:
-  - foto: "/verhuurfotos/terrein_1.jpeg"
-  - foto: "/verhuurfotos/terrein_2.jpeg"
-waar: "Huttelaan 30, 3001 Heverlee. Centrum Leuven is op minder dan tien minuten bereikbaar met de fiets. Er is een supermarkt op enkele minuten fietsen."
-prijs: "Eén weekend (vrijdagavond tot zondagochtend) kost 290 euro (exclusief water, elektriciteit en gas)."
-reglement: "/documenten/HUISHOUDELIJK_REGELEMENT_VERHUUR 2026-2027.pdf"
-kampas_link: "https://www.kampas.be/nl/verblijf/lokalen-chiro-spirit-heverlee-1"
+  - foto: /verhuurfotos/terrein_1.jpeg
+  - foto: /verhuurfotos/terrein_2.jpeg
+waar: Huttelaan 30, 3001 Heverlee. Centrum Leuven is op minder dan tien minuten
+  bereikbaar met de fiets. Er is een supermarkt op enkele minuten fietsen.
+prijs: Eén weekend (vrijdagavond tot zondagochtend) kost 290 euro (exclusief
+  water, elektriciteit en gas).
+reglement: /documenten/HUISHOUDELIJK_REGELEMENT_VERHUUR 2026-2027.pdf
+kampas_link: https://www.kampas.be/nl/verblijf/lokalen-chiro-spirit-heverlee-1
 ---
