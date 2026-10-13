@@ -58,6 +58,12 @@ collections:
         fields:
           - {label: "Inhoud", name: "body", widget: "markdown"}
 
+      - name: "VZW"
+        label: "VZW"
+        file: "content/pagina/vzw.md"
+        fields:
+          - {label: "Inhoud", name: "body", widget: "markdown"}
+
   # -------------------------------------------------------------
   # KALENDER — elke activiteit is een eigen bestand, dus vrijwilligers
   # kunnen er zelf bijmaken/schrappen zonder een lange lijst te bewerken.
