@@ -39,6 +39,7 @@ collections:
           - {label: "Instagram-link", name: "instagram", widget: "string"}
           - {label: "Algemeen e-mailadres", name: "email_algemeen", widget: "string"}
           - {label: "Verhuur e-mailadres", name: "email_verhuur", widget: "string"}
+          - {label: "Achtergrondfoto (hele site)", name: "achtergrond", widget: "image", required: false}
 
   # -------------------------------------------------------------
   # VASTE PAGINA'S — Over ons, Inschrijven
