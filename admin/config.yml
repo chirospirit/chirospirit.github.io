@@ -139,7 +139,7 @@ collections:
  # -------------------------------------------------------------
   # VZW - nodig voor google workspace verificatie
   # -------------------------------------------------------------
-    - name: "vzw"
+  - name: "vzw"
     label: "VZW"
     files:
       - name: "vzw"
