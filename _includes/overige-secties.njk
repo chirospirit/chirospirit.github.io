@@ -102,3 +102,38 @@
 
   <p><strong>Wanneer</strong><br>{{ site.uren }}</p>
 </section>
+
+<section id="vzw" class="pagina">
+  <h2>VZW</h2>
+  {% for v in collections.vzwPagina %}
+    {% if v.data.intro %}<p>{{ v.data.intro }}</p>{% endif %}
+
+    {% for s in v.data.secties %}
+      <h3>{{ s.titel }}</h3>
+      {{ s.tekst | markdown | safe }}
+    {% endfor %}
+
+    {% if v.data.fotos | length %}
+    <div class="foto-galerij">
+      {% for foto in v.data.fotos %}
+        <img src="{{ foto.foto }}" alt="Foto VZW" class="foto">
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if v.data.documenten | length %}
+    <h3>Documenten</h3>
+    <ul class="lijst">
+      {% for doc in v.data.documenten %}
+        <li><a href="{{ doc.bestand }}" target="_blank" rel="noopener noreferrer">{{ doc.naam }}</a>
+          {% if doc.info %}<span class="lijst-info">{{ doc.info }}</span>{% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if v.data.contact %}
+    <h3>Contact</h3>
+    {{ v.data.contact | markdown | safe }}
+    {% endif %}
+  {% endfor %}
+</section>

@@ -5,6 +5,8 @@
 // gewoon GitHub Pages, exact zoals nu.
 // =====================================================================
 const yaml = require("js-yaml");
+const markdownIt = require("markdown-it");
+const md = markdownIt({ html: false, linkify: true });
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("readableDate", (dateObj) => {
@@ -12,6 +14,7 @@ module.exports = function (eleventyConfig) {
       day: "numeric", month: "long", year: "numeric"
     });
   });
+  eleventyConfig.addFilter("markdown", (tekst) => (tekst ? md.render(String(tekst)) : ""));
 
   eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
 
@@ -32,6 +35,7 @@ module.exports = function (eleventyConfig) {
     return api.getFilteredByGlob("content/kalender/*.md")
       .sort((a, b) => new Date(a.data.datum) - new Date(b.data.datum));
   });
+  eleventyConfig.addCollection("vzwPagina", api => api.getFilteredByGlob("content/vzw/vzw.md"));
 
   // NIEUW: elk een collectie met één bestand
   eleventyConfig.addCollection("overOns", api => api.getFilteredByGlob("content/pagina/over-ons.md"));

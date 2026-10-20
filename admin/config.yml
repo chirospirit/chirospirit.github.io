@@ -135,3 +135,35 @@ collections:
       - {label: "Naam", name: "naam", widget: "string"}
       - {label: "Bestand (PDF)", name: "bestand", widget: "file"}
       - {label: "Extra info (bv. beschikbaar vanaf)", name: "info", widget: "string", required: false}
+
+ # -------------------------------------------------------------
+  # VZW - nodig voor google workspace verificatie
+  # -------------------------------------------------------------
+    - name: "vzw"
+    label: "VZW"
+    files:
+      - name: "vzw"
+        label: "VZW-pagina"
+        file: "content/vzw/vzw.md"
+        fields:
+          - {label: "Intro", name: "intro", widget: "text", required: false}
+          - label: "Tekstblokken"
+            name: "secties"
+            widget: "list"
+            fields:
+              - {label: "Titel", name: "titel", widget: "string"}
+              - {label: "Tekst", name: "tekst", widget: "markdown"}
+          - label: "Foto's"
+            name: "fotos"
+            widget: "list"
+            required: false
+            field: {label: "Foto", name: "foto", widget: "image"}
+          - label: "Documenten"
+            name: "documenten"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Naam", name: "naam", widget: "string"}
+              - {label: "Bestand (PDF)", name: "bestand", widget: "file"}
+              - {label: "Extra info", name: "info", widget: "string", required: false}
+          - {label: "Contact", name: "contact", widget: "markdown", required: false}

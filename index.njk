@@ -131,6 +131,7 @@ ul.lijst-bollen li:before { content: "\2022  "; }
           <li class="nav-item"><a class="nav-link" onclick="toonPagina('groepen')" data-id="groepen">Groepen</a></li>
           <li class="nav-item"><a class="nav-link" onclick="toonPagina('inschrijven')" data-id="inschrijven">Inschrijven</a></li>
           <li class="nav-item"><a class="nav-link" onclick="toonPagina('verhuur')" data-id="verhuur">Verhuur</a></li>
+          <li class="nav-item"><a class="nav-link" onclick="toonPagina('vzw')" data-id="vzw">VZW</a></li>
           <li class="nav-item"><a class="nav-link" onclick="toonPagina('documenten')" data-id="documenten">Documenten</a></li>
           <li class="nav-item"><a class="nav-link" onclick="toonPagina('contact')" data-id="contact">Contact</a></li>
         </ul>
@@ -189,7 +190,7 @@ function toonPagina(id) {
 
 (function() {
   var hash = location.hash.slice(1);
-  var geldig = ['over-ons','kalender','groepen','inschrijven','verhuur','documenten','contact'];
+  var geldig = ['over-ons','kalender','groepen','inschrijven','verhuur','documenten','vzw','contact'];
   if (hash && geldig.indexOf(hash) !== -1) {
     toonPagina(hash);
   }
