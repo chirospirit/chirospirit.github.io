@@ -2,9 +2,9 @@
 # CMS-CONFIGURATIE voor Chiro Spirit Heverlee
 # =====================================================================
 # Dit bestand bepaalt welke formuliervelden de vrijwilligers te zien
-# krijgen in het admin-paneel (bereikbaar via jullie-site.be/admin).
-# Elke wijziging die zij opslaan wordt automatisch een commit (of PR,
-# zie publish_mode) naar deze GitHub-repo. Niemand raakt nog HTML aan.
+# krijgen in het admin-paneel (bereikbaar via chirospiritheverlee.be/admin).
+# Elke wijziging die zij opslaan wordt automatisch een merge(of PR,
+# zie publish_mode) naar deze GitHub-repo.
 
 backend:
   name: github
@@ -14,7 +14,7 @@ backend:
 #local_backend: true
 
 # editorial_workflow zorgt dat elke wijziging als pull request binnenkomt
-# in plaats van rechtstreeks naar main te gaan — zelfde gewoonte als nu.
+# in plaats van rechtstreeks naar main te gaan
 publish_mode: editorial_workflow
 
 media_folder: "afbeeldingen/uploads"
@@ -80,13 +80,12 @@ collections:
       - {label: "Beschrijving", name: "beschrijving", widget: "text", required: false}
 
   # -------------------------------------------------------------
-  # GROEPEN — vaste lijst, geen nieuwe
-  # groepen bijmaken, dus create: false.
+  # GROEPEN — create: True zodat er groepen bijgemaakt kunnen worden
   # -------------------------------------------------------------
   - name: "groepen"
     label: "Groepen"
     folder: "content/groepen"
-    create: false
+    create: true
     fields:
       - {label: "Naam", name: "naam", widget: "string"}
       - {label: "Leeftijd", name: "leeftijd", widget: "string"}
@@ -163,7 +162,7 @@ collections:
       - {label: "Extra info (bv. beschikbaar vanaf)", name: "info", widget: "string", required: false}
 
  # -------------------------------------------------------------
-  # VZW - nodig voor google workspace verificatie
+  # VZW - VZW pagina voor de ouders 
   # -------------------------------------------------------------
   - name: "vzw"
     label: "VZW"
