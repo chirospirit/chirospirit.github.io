@@ -9,13 +9,12 @@ voorzieningen:
   - Eetruimte naast de keuken
   - Tafels en stoelen
   - Sanitaire ruimte met vijf wc's en doucheruimte met voetbaldouches
-  - Kookgerief (potten & pannen
+  - Kookgerief
+  - potten & pannen
   - bestek
   - borden
-  - ..)
-  - Kuisgerief (kuisproduct
-  - dweil
-  - ...)
+  - borstels
+  - aftrekkers
 waarschuwing: De lokalen kunnen NIET gehuurd worden voor fuiven en inleefweken.
 fotos_jokri:
   - foto: /verhuurfotos/jokri_1.jpeg
