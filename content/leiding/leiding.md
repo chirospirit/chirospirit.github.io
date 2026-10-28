@@ -1,6 +1,6 @@
 ---
-intro: "Dit is de leiding."
-seizoen: "2026-2027"
+intro: Hier de leiding die weer elke zondag voor jullie klaarstaan.
+seizoen: 2026-2027
 foto: ""
 namen:
   - Bryan
