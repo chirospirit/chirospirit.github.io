@@ -95,6 +95,11 @@ collections:
       - { label: "Foto van de leiding", name: "foto_leiding", widget: "image", required: false }
       - { label: "Foto van de groep", name: "foto_groep", widget: "image", required: false }
       - { label: "Korte tekst (pagina van de groep)", name: "detail_tekst", widget: "text", required: false }
+      - label: "Namen van de leiding"
+        name: "leiding_lijst"
+        widget: "list"
+        required: false
+        hint: "Eén naam per regel, met de + knop"
 
   # -------------------------------------------------------------
   # VERHUUR — één pagina, maar met herhaalbare foto-lijsten
