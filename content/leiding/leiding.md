@@ -1,6 +1,6 @@
 ---
 intro: "Dit is de leiding."
-seizoen: "2026-3027"
+seizoen: "2026-2027"
 foto: ""
 namen:
   - Bryan
