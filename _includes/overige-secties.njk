@@ -160,3 +160,20 @@
   {% endif %}
 </section>
 {% endfor %}
+
+
+{% for p in collections.leidingPagina %}
+<section id="leiding" class="pagina">
+  <h2>Leiding</h2>
+  {% if p.data.intro %}<p>{{ p.data.intro }}</p>{% endif %}
+  {% if p.data.foto %}
+    <img class="foto leiding-foto" src="{{ p.data.foto }}" alt="Alle leiding">
+  {% endif %}
+  {% if p.data.seizoen %}<p class="leeftijd">Leiding {{ p.data.seizoen }}</p>{% endif %}
+  {% if p.data.namen | length %}
+    <ul class="leiding-namen">
+      {% for naam in p.data.namen %}<li>{{ naam }}</li>{% endfor %}
+    </ul>
+  {% endif %}
+</section>
+{% endfor %}

@@ -36,6 +36,7 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => new Date(a.data.datum) - new Date(b.data.datum));
   });
   eleventyConfig.addCollection("vzwPagina", api => api.getFilteredByGlob("content/vzw/vzw.md"));
+  eleventyConfig.addCollection("leidingPagina", api => api.getFilteredByGlob("content/leiding/leiding.md"));
 
   // NIEUW: elk een collectie met één bestand
   eleventyConfig.addCollection("overOns", api => api.getFilteredByGlob("content/pagina/over-ons.md"));
