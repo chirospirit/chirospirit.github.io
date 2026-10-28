@@ -90,7 +90,7 @@ collections:
     fields:
       - {label: "Naam", name: "naam", widget: "string"}
       - {label: "Leeftijd", name: "leeftijd", widget: "string"}
-      - {label: "Beschrijving", name: "beschrijving", widget: "text"}
+      - {label: "Beschrijving", name: "beschrijving", widget: "text", required: false}
       - {label: "Leiding", name: "leiding", widget: "text"}
       - { label: "Foto van de leiding", name: "foto_leiding", widget: "image", required: false }
       - { label: "Foto van de groep", name: "foto_groep", widget: "image", required: false }
