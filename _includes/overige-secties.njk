@@ -137,3 +137,15 @@
     {% endif %}
   {% endfor %}
 </section>
+
+{% for groep in collections.groepenOpVolgorde %}
+<section id="groep-{{ groep.fileSlug }}" class="pagina">
+  <p><a class="groep-link" onclick="toonPagina('groepen')">← Terug naar alle groepen</a></p>
+  <h2>{{ groep.data.naam }}</h2>
+  {% if groep.data.detail_tekst %}<p>{{ groep.data.detail_tekst }}</p>{% endif %}
+  <div class="foto-galerij">
+    {% if groep.data.foto_groep %}<figure><img class="foto" src="{{ groep.data.foto_groep }}" alt="Groepsfoto {{ groep.data.naam }}"><figcaption>De groep</figcaption></figure>{% endif %}
+    {% if groep.data.foto_leiding %}<figure><img class="foto" src="{{ groep.data.foto_leiding }}" alt="Leiding {{ groep.data.naam }}"><figcaption>De leiding</figcaption></figure>{% endif %}
+  </div>
+</section>
+{% endfor %}

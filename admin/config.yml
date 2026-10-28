@@ -80,7 +80,7 @@ collections:
       - {label: "Beschrijving", name: "beschrijving", widget: "text", required: false}
 
   # -------------------------------------------------------------
-  # GROEPEN — vaste lijst (Ribbels t.e.m. Aspi's), geen nieuwe
+  # GROEPEN — vaste lijst, geen nieuwe
   # groepen bijmaken, dus create: false.
   # -------------------------------------------------------------
   - name: "groepen"
@@ -92,6 +92,9 @@ collections:
       - {label: "Leeftijd", name: "leeftijd", widget: "string"}
       - {label: "Beschrijving", name: "beschrijving", widget: "text"}
       - {label: "Leiding", name: "leiding", widget: "text"}
+      - { label: "Foto van de leiding", name: "foto_leiding", widget: "image", required: false }
+      - { label: "Foto van de groep", name: "foto_groep", widget: "image", required: false }
+      - { label: "Korte tekst (pagina van de groep)", name: "detail_tekst", widget: "text", required: false }
 
   # -------------------------------------------------------------
   # VERHUUR — één pagina, maar met herhaalbare foto-lijsten

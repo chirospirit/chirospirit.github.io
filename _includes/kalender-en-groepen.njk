@@ -23,7 +23,7 @@
   <h2>Groepen</h2>
   {% for groep in collections.groepenOpVolgorde %}
     <div class="vak">
-      <h3 class="vak-titel">{{ groep.data.naam }}</h3>
+      <h3 class="vak-titel"><a class="groep-link" onclick="toonPagina('groep-{{ groep.fileSlug }}')">{{ groep.data.naam }}</a></h3>
       <p class="leeftijd">{{ groep.data.leeftijd }}</p>
       <p>{{ groep.templateContent | safe }}</p>
       <p class="leiding-groep"><strong>Leiding:</strong> {{ groep.data.leiding }}</p>
