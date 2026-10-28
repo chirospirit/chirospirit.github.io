@@ -170,7 +170,7 @@ collections:
     files:
       - name: "vzw"
         label: "VZW-pagina"
-        file: "content/vzw/vzw.md"
+        file: "content/VZW/VZW.md"
         fields:
           - {label: "Intro", name: "intro", widget: "text", required: false}
           - label: "Tekstblokken"
