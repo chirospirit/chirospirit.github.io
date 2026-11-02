@@ -1,5 +1,7 @@
 ---
-intro: Hier komt een korte introductie over de vzw.
+intro: "De vzw chiro spirit heverlee bestaat ter ondersteuning van de dagelijkse
+  werking van de chiro. Wij staan voornamelijk in voor de langetermijnwerking
+  van de chiro en voor de onderhoud van de gebouwen.  "
 secties:
   - titel: Wie zijn wij?
     tekst: |
