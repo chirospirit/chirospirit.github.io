@@ -17,7 +17,6 @@ secties:
       Secretaris: Wout Goossens
 fotos: []
 documenten: []
-contact: >
-  Vragen over de vzw? Mail (voorlopig) naar
-  [chirospiritheverlee@gmail.com](mailto:chirospiritheverlee@gmail.com).
+contact: Vragen over de vzw? Mail naar
+  [vzw@chirospiritheverlee.com](mailto:chirospiritheverlee@gmail.com).
 ---
